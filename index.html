@@ -20,7 +20,7 @@
         
         <p>
             Round answers to the nearest
-            <input type="number" id="rounding" value="4" placeholder="0" min="0" max="10"  class="short_number">
+            <input type="number" id="rounding" value="4" placeholder="0" min="0" max="10"  class="short_number" autocomplete="off">
             decimals.
         </p>
 
@@ -32,21 +32,107 @@
             
             <p>
                 Length =
-                <input type="number" id="length" placeholder="0" class="short_number">
+                <input type="number" id="length" placeholder="0" class="short_number" autocomplete="off">
 
                 Width =
-                <input type="number" id="width" placeholder="0" class="short_number">
+                <input type="number" id="width" placeholder="0" class="short_number" autocomplete="off">
 
                 Height =
-                <input type="number" id="height" placeholder="0" class="short_number">
+                <input type="number" id="height" placeholder="0" class="short_number" autocomplete="off">
 
                 Radius =
-                <input type="number" id="radius" placeholder="0" class="short_number">
+                <input type="number" id="radius" placeholder="0" class="short_number" autocomplete="off">
             </p>
 
-            <button id="rp_volume">
+            <br>
+
+            <button id="rect_prism_volume_button">
                 Rectangular Prism Volume
             </button> 
+            
+            The volume of the rectangular prism is:
+            <span id = "rect_prism_volume"></span>
+                
+            <br>
+            <br>
+
+            <button id="rect_prism_area_button">
+                Rectangular Prism Surface Area
+            </button> 
+            
+            The surface area of the rectangular prism is:
+            <span id = "rect_prism_area"></span>
+
+            <br>
+            <br>
+
+            <button id="sphere_volume_button">
+                Sphere Volume
+            </button> 
+            
+            The volume of the sphere is:
+            <span id = "sphere_volume"></span>
+
+            <br>
+            <br>
+
+            <button id="sphere_area_button">
+                Sphere Surface Area
+            </button> 
+            
+            The surface area of the sphere is:
+            <span id = "sphere_area"></span>
+
+            <hr>
+
+            <h4>
+                Lines
+            </h4>
+
+            <p>
+
+                <h5>
+                    Co-ordinate 1
+               </h5> 
+
+                x1 =
+                <input type="number" id="x1" placeholder="0" class="short_number" autocomplete="off">
+
+                y1 =
+                <input type="number" id="y1" placeholder="0" class="short_number" autocomplete="off">
+
+                <br>
+                <br>
+
+               <h5>
+                    Co-ordinate 2
+               </h5> 
+
+                x2 =
+                <input type="number" id="x2" placeholder="0" class="short_number" autocomplete="off">
+
+                y2 =
+                <input type="number" id="y2" placeholder="0" class="short_number" autocomplete="off">
+            </p>
+
+            <br>
+
+            <button id="slope_button">
+                Slope
+            </button> 
+            
+            The slope of the line is:
+            <span id = "slope"></span>
+
+            <br>
+            <br>
+
+            <button id="line_length_">
+                Sphere Surface Area
+            </button> 
+            
+            The surface area of the sphere is:
+            <span id = "sphere_area"></span>
 
         </div>
         
@@ -66,8 +152,8 @@
             <label for="c">c:</label>
             <input id="c" type="number" value="1" placeholder="1" autocomplete="off" class="short_number">
 
-            <button id="zeros">Find the Zeros</button> 
-            <button id="vertex">Find the Vertex</button>
+            <button id="zeros_button">Find the Zeros</button> 
+            <button id="vertex_button">Find the Vertex</button>
 
             <!-- Output for the zeros or vertex -->
             <div id="quadratic_output"></div>
