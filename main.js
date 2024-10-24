@@ -11,10 +11,13 @@
 /*** Event Listeners ***/
 document.getElementById("zeros_button").addEventListener("click", zeros);
 document.getElementById("vertex_button").addEventListener("click", vertex);
-document.getElementById("rect_prism_volume_button").addEventListener("click", rect_prism_volume)
-document.getElementById("rect_prism_area_button").addEventListener("click", rect_prism_area)
-document.getElementById("sphere_volume_button").addEventListener("click", sphere_volume)
-document.getElementById("sphere_area_button").addEventListener("click", sphere_area)
+document.getElementById("rect_prism_volume_button").addEventListener("click", rect_prism_volume);
+document.getElementById("rect_prism_area_button").addEventListener("click", rect_prism_area);
+document.getElementById("sphere_volume_button").addEventListener("click", sphere_volume);
+document.getElementById("sphere_area_button").addEventListener("click", sphere_area);
+document.getElementById("slope_button").addEventListener("click", slope_user);
+document.getElementById("line_length_button").addEventListener("click", line_length);
+document.getElementById("midpoint_button").addEventListener("click", midpoint);
 
 /*** Functions ***/
 
@@ -97,19 +100,68 @@ function sphere_area() {
     document.getElementById("sphere_area").textContent = `${area} units squared`;
 }
 
+function slope_user() {
+    // Get the number for x1, y1, x2, and y2 from their boxes
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    // Use the slope function I already made
+    let m = round_user(slope(x1, y1, x2, y2));
+    document.getElementById("slope").textContent = `${m}`;
+}
+
+function line_length() {
+    // Get the number for x1, y1, x2, and y2 from their boxes
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    // Use the legnth of a line segment fuction I already made
+    let d = round_user(length(x1, y1, x2, y2));
+    document.getElementById("line_length").textContent = `${d}`;
+}
+
+function midpoint() {
+    // Get the number for x1, y1, x2, and y2 from their boxes
+    let x1 = Number(document.getElementById("x1").value);
+    let y1 = Number(document.getElementById("y1").value);
+    let x2 = Number(document.getElementById("x2").value);
+    let y2 = Number(document.getElementById("y2").value);
+    // Use the average function I already made
+    let xavg = round_user(average(x1, x2));
+    let yavg = round_user(average(y1, y2));
+    document.getElementById("midpoint").textContent = `${xavg}, ${yavg}`;
+}
+
+
 /** PART 2 **/
+
+/* Javascript */
 
 // Calculate the y-value of a parabola from standand form
 function y_quad(a, b, c, x) {
-
+    let y = a * x**2 + (b * x) + c;
+    return y;
 }
+
+/* HTML */
 
 // Determine the zeros of a quadratic using user-inputs for a, b, and c
 function zeros() {
+    // Get the number for a, b, and c from their boxes
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+    // Find the zeros and round them to the useruser's request number of decimals
+    let x = round_user((-b + Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
+    let y = round_user((-b - Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
+
+    return x, y;
 }
 
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
 function vertex() {
-
+    
 }
 
