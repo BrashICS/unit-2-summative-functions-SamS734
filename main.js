@@ -131,7 +131,7 @@ function midpoint() {
     // Use the average function I already made
     let xavg = round_user(average(x1, x2));
     let yavg = round_user(average(y1, y2));
-    document.getElementById("midpoint").textContent = `${xavg}, ${yavg}`;
+    document.getElementById("midpoint").textContent = `(${xavg}, ${yavg})`;
 }
 
 
@@ -159,7 +159,7 @@ function zeros() {
     // Print the output to the console
     console.log(`${zero_plus}, ${zero_minus}`);
     // Display them in the page
-    document.getElementById("quadratic_output").textContent = `The zeros are x = ${zero_plus} and x = ${zero_minus}`;
+    document.getElementById("quadratic_output").textContent = `The zeros are: x = ${zero_plus} and x = ${zero_minus}`;
 }
 
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
@@ -174,6 +174,6 @@ function vertex() {
     // Print the output to the console
     console.log(`(${round_user(-b / 2 * a)}, ${y})`);
     // Display them in the page
-    document.getElementById("quadratic_output").textContent = `The vertex is (${round_user(-b / 2 * a)}, ${y})`;
+    document.getElementById("quadratic_output").textContent = `The vertex is: (${round_user(-b / 2 * a)}, ${y})`;
 }
 
