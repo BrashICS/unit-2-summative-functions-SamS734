@@ -153,15 +153,27 @@ function zeros() {
     let a = Number(document.getElementById("a").value);
     let b = Number(document.getElementById("b").value);
     let c = Number(document.getElementById("c").value);
-    // Find the zeros and round them to the useruser's request number of decimals
-    let x = round_user((-b + Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
-    let y = round_user((-b - Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
-
-    return x, y;
+    // Find the zeros and round them to the user's request number of decimals
+    let zero_plus = round_user((-b + Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
+    let zero_minus = round_user((-b - Math.sqrt((b**2) - 4 * a * c)) / 2 * a);
+    // Print the output to the console
+    console.log(`${zero_plus}, ${zero_minus}`);
+    // Display them in the page
+    document.getElementById("quadratic_output").textContent = `The zeros are x = ${zero_plus} and x = ${zero_minus}`;
 }
 
 // Determine the vertex of a quadratic using user-inputs for a, b, and c
 function vertex() {
-    
+    // Get the number for a, b, and c from their boxes
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+    // Find the vertex and round it to the user's request number of decimals, also use the y_quad function
+    // x = -b / 2 * a
+    let y = round_user(y_quad(a, b, c, round_user(-b / 2 * a)));
+    // Print the output to the console
+    console.log(`(${round_user(-b / 2 * a)}, ${y})`);
+    // Display them in the page
+    document.getElementById("quadratic_output").textContent = `The vertex is (${round_user(-b / 2 * a)}, ${y})`;
 }
 
